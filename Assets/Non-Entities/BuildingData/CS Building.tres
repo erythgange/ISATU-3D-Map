@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://ba681w1557xru"]
+
+[ext_resource type="Script" uid="uid://mmd0gaj72atj" path="res://Assets/Non-Entities/BuildingData/BuildingData.gd" id="1_x3dyj"]
+
+[resource]
+script = ExtResource("1_x3dyj")
+building_name = "ICT Building"
+description = "The ICT Building serves the College of Computing and Informatics (CCI) and related computing programs.
+"
+Departments = Array[String](["College of Computing and Informatics", "Computer Department"])
+metadata/_custom_type_script = "uid://mmd0gaj72atj"
