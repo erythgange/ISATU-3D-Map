@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtpf4fxet0ctl"
-path="res://.godot/imported/ISATU 3D Map.icon.png-103a94470f04738df073fe45cb1f7361.ctex"
+uid="uid://c1eyb668sdmuc"
+path="res://.godot/imported/index.png-917645f878b7eae3bd8162743181f2e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://builds/web v0.01/ISATU 3D Map.icon.png"
-dest_files=["res://.godot/imported/ISATU 3D Map.icon.png-103a94470f04738df073fe45cb1f7361.ctex"]
+source_file="res://builds/index.png"
+dest_files=["res://.godot/imported/index.png-917645f878b7eae3bd8162743181f2e0.ctex"]
 
 [params]
 

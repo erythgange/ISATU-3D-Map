@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ifp37yfjigin"
-path="res://.godot/imported/ISATU 3D Map.png-3e12145ae02350b07fcdb2c0cf9df845.ctex"
+uid="uid://ceb103akis1tn"
+path="res://.godot/imported/index.apple-touch-icon.png-1160abed1e221acb4c68d89cdf887054.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://builds/web v0.01/ISATU 3D Map.png"
-dest_files=["res://.godot/imported/ISATU 3D Map.png-3e12145ae02350b07fcdb2c0cf9df845.ctex"]
+source_file="res://builds/index.apple-touch-icon.png"
+dest_files=["res://.godot/imported/index.apple-touch-icon.png-1160abed1e221acb4c68d89cdf887054.ctex"]
 
 [params]
 
