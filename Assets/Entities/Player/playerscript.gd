@@ -1,15 +1,26 @@
 extends CharacterBody3D
 
-@export var walk_speed := 5.0
-@export var fly_speed := 20.0
-@export var mouse_sens := 0.003
+var walk_speed := 5.0
+var fly_speed := 20.0
+var mouse_sens := 0.003
 var is_flying := true
+var label = ["keyboard", "touch", "controller"]
 
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var head: Node3D = $Head
+@onready var virtual_joystick: VirtualJoystick = $VirtualJoystick
+
+@onready var debug: Label = $Debug/Label
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	pass
+
+func _process(delta: float) -> void:
+	#debug.text = label
+	pass
+
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
