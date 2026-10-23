@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://yj7idqgx31lw"]
-
-[ext_resource type="PackedScene" uid="uid://8456whq67on7" path="res://Assets/Non-Entities/ISAT-U.blend" id="1_8qyoy"]
-
-[node name="ISAT-U" unique_id=873397361 instance=ExtResource("1_8qyoy")]

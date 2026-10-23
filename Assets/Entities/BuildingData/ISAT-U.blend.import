@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://8456whq67on7"
-path="res://.godot/imported/ISAT-U.blend-22484ee84334c8a33b7f896e9ce10ee6.scn"
+path="res://.godot/imported/ISAT-U.blend-55ca2e458d86a638258bcdeaeaa7590f.scn"
 
 [deps]
 
-source_file="res://Assets/Non-Entities/ISAT-U.blend"
-dest_files=["res://.godot/imported/ISAT-U.blend-22484ee84334c8a33b7f896e9ce10ee6.scn"]
+source_file="res://Assets/Entities/BuildingData/ISAT-U.blend"
+dest_files=["res://.godot/imported/ISAT-U.blend-55ca2e458d86a638258bcdeaeaa7590f.scn"]
 
 [params]
 

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c1d2kjp1nfx3b"]
+
+[ext_resource type="Script" uid="uid://nxib5k05iw21" path="res://Assets/Non-Entities/UI/pause_menu.gd" id="1_muio7"]
+
+[node name="PauseMenu" type="Control" unique_id=621238889]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_muio7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1211088401]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=936073931]
+root_node = NodePath("../PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1182400751]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -161.0
+offset_right = 163.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1255330963]
+layout_mode = 2
+alignment = 1
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=743756862]
+layout_mode = 2
+text = "Resume"
+
+[node name="Settings" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1137973517]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=993279684]
+layout_mode = 2
+text = "Quit"

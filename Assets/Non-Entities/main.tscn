@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://chlhfkmika3t8"]
 
-[ext_resource type="PackedScene" uid="uid://dk4lvl5c2twk5" path="res://Assets/Entities/player.tscn" id="1_ju4o8"]
+[ext_resource type="PackedScene" uid="uid://dk4lvl5c2twk5" path="res://Assets/Entities/Player/player.tscn" id="1_ju4o8"]
 [ext_resource type="Script" uid="uid://cky2fsjalhqtl" path="res://Assets/Non-Entities/main.gd" id="1_o7rjv"]
-[ext_resource type="PackedScene" uid="uid://8456whq67on7" path="res://Assets/Non-Entities/ISAT-U.blend" id="3_cu5wp"]
+[ext_resource type="PackedScene" uid="uid://8456whq67on7" path="res://Assets/Entities/BuildingData/ISAT-U.blend" id="3_cu5wp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ju4o8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -43,5 +43,8 @@ material = SubResource("StandardMaterial3D_mti6b")
 
 [node name="ISAT-U" parent="." unique_id=873397361 instance=ExtResource("3_cu5wp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.412528, 0, -2.7389617)
+
+[node name="Floor" parent="ISAT-U" index="2" unique_id=1514257565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09540939, 0.11233902, 0.021800995)
 
 [editable path="ISAT-U"]

@@ -15,6 +15,14 @@ run/main_scene="uid://chlhfkmika3t8"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Non-game Files/icon.svg"
 
+[autoload]
+
+InputMode="*uid://b4ul2mb5enpow"
+
+[display]
+
+window/handheld/orientation=4
+
 [file_customization]
 
 folder_colors={

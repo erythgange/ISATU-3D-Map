@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cjg4k5b84kk67"]
+
+[ext_resource type="Script" uid="uid://jkbkchmbng6h" path="res://Assets/Non-Entities/UI/touch_controls.gd" id="1_l5ovl"]
+[ext_resource type="Script" uid="uid://vk6yi7tnbtxo" path="res://Assets/Non-Entities/UI/move_stick.gd" id="2_eu2br"]
+[ext_resource type="Script" uid="uid://cdi7fc2yojgj5" path="res://Assets/Non-Entities/UI/look_area.gd" id="3_mnmp1"]
+
+[node name="TouchControls" type="CanvasLayer" unique_id=775917246]
+script = ExtResource("1_l5ovl")
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=130714530]
+offset_left = 121.0
+offset_top = 506.0
+offset_right = 161.0
+offset_bottom = 546.0
+action_left = &"left"
+action_right = &"right"
+action_up = &"up"
+action_down = &"down"
+
+[node name="MoveStick" type="Control" parent="." unique_id=114123258]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_eu2br")
+
+[node name="LookArea" type="Control" parent="." unique_id=977876163]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_mnmp1")

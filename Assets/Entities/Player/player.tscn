@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dk4lvl5c2twk5"]
 
-[ext_resource type="Script" uid="uid://betuk2lfau3l2" path="res://Assets/Entities/playerscript.gd" id="1_57uqe"]
+[ext_resource type="Script" uid="uid://betuk2lfau3l2" path="res://Assets/Entities/Player/playerscript.gd" id="1_57uqe"]
+[ext_resource type="PackedScene" uid="uid://cjg4k5b84kk67" path="res://Assets/Non-Entities/UI/touch_controls.tscn" id="2_f2wr6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4kxuq"]
 
@@ -19,3 +20,5 @@ shape = SubResource("CapsuleShape3D_4kxuq")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1567311650]
 fov = 90.0
+
+[node name="TouchControls" parent="." unique_id=1823640440 instance=ExtResource("2_f2wr6")]
