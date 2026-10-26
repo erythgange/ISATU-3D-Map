@@ -9,10 +9,12 @@
 script = ExtResource("1_l5ovl")
 
 [node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=130714530]
-offset_left = 121.0
-offset_top = 506.0
-offset_right = 161.0
-offset_bottom = 546.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+joystick_mode = 1
+joystick_size = 300.0
 deadzone_ratio = 0.5
 action_left = &"left"
 action_right = &"right"

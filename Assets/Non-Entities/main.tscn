@@ -24,6 +24,28 @@ albedo_color = Color(0.6578899, 0.99999994, 0.5680373, 1)
 [node name="main" type="Node3D" unique_id=233757667]
 script = ExtResource("1_o7rjv")
 
+[node name="TouchMenu" type="CanvasLayer" parent="." unique_id=1085879963]
+
+[node name="BoxContainer" type="BoxContainer" parent="TouchMenu" unique_id=905437933]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -392.0
+offset_right = 392.0
+grow_vertical = 0
+alignment = 1
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="TouchMenu/BoxContainer" unique_id=1290006212]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+joystick_size = 200.0
+deadzone_ratio = 0.5
+action_left = &"left"
+action_right = &"right"
+action_up = &"up"
+action_down = &"down"
+
 [node name="Player" parent="." unique_id=1869260467 instance=ExtResource("1_ju4o8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0061543, 0)
 
@@ -44,7 +66,7 @@ material = SubResource("StandardMaterial3D_mti6b")
 [node name="ISAT-U" parent="." unique_id=873397361 instance=ExtResource("3_cu5wp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.412528, 0, -2.7389617)
 
-[node name="Floor" parent="ISAT-U" index="2" unique_id=708082505]
+[node name="Floor" parent="ISAT-U" index="2" unique_id=423311731]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09540939, 0.11233902, 0.021800995)
 
 [editable path="ISAT-U"]
