@@ -2,25 +2,10 @@
 
 [ext_resource type="Script" uid="uid://jkbkchmbng6h" path="res://Assets/Non-Entities/UI/touch_controls.gd" id="1_l5ovl"]
 [ext_resource type="Script" uid="uid://vk6yi7tnbtxo" path="res://Assets/Non-Entities/UI/move_stick.gd" id="2_eu2br"]
-[ext_resource type="Script" uid="uid://bb4femp6dilop" path="res://Assets/Non-Entities/UI/virtual_joystick.gd" id="2_mnmp1"]
 [ext_resource type="Script" uid="uid://cdi7fc2yojgj5" path="res://Assets/Non-Entities/UI/look_area.gd" id="3_mnmp1"]
 
 [node name="TouchControls" type="CanvasLayer" unique_id=775917246]
 script = ExtResource("1_l5ovl")
-
-[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=130714530]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-grow_vertical = 0
-joystick_mode = 1
-joystick_size = 300.0
-deadzone_ratio = 0.5
-action_left = &"left"
-action_right = &"right"
-action_up = &"up"
-action_down = &"down"
-script = ExtResource("2_mnmp1")
 
 [node name="MoveStick" type="Control" parent="." unique_id=114123258]
 layout_mode = 3
