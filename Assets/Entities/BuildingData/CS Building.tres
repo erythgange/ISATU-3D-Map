@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_x3dyj")
-building_name = "ICT Building"
+id = "CS Building"
+display_name = "Computer Science Building"
 description = "The ICT Building serves the College of Computing and Informatics (CCI) and related computing programs.
 "
-Departments = Array[String](["College of Computing and Informatics", "Computer Department"])
 metadata/_custom_type_script = "uid://mmd0gaj72atj"

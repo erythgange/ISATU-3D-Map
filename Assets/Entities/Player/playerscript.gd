@@ -4,22 +4,19 @@ var walk_speed := 5.0
 var fly_speed := 20.0
 var mouse_sens := 0.003
 var is_flying := true
-var label = ["keyboard", "touch", "controller"]
 
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var head: Node3D = $Head
 @onready var virtual_joystick: VirtualJoystick = $VirtualJoystick
+@onready var ray_cast_3d: RayCast3D = $Head/Camera3D/RayCast3D
 
 @onready var debug: Label = $Debug/Label
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	pass
-
-func _process(delta: float) -> void:
-	#debug.text = label
-	pass
-
+	
+func _process(_delta: float) -> void:
+	debug.text = "Input: %s\nFPS: %d" % [InputMode.Mode.keys()[InputMode.mode], Engine.get_frames_per_second()]
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -49,5 +46,10 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	else:
 		velocity.y = 0.0
+		
+	#check building
 
 	move_and_slide()
+
+func check_building() -> void:
+	pass
