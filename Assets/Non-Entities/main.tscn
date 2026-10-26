@@ -66,7 +66,7 @@ material = SubResource("StandardMaterial3D_mti6b")
 [node name="ISAT-U" parent="." unique_id=873397361 instance=ExtResource("3_cu5wp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.412528, 0, -2.7389617)
 
-[node name="Floor" parent="ISAT-U" index="2" unique_id=423311731]
+[node name="Floor" parent="ISAT-U" index="1" unique_id=1087064032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09540939, 0.11233902, 0.021800995)
 
 [editable path="ISAT-U"]

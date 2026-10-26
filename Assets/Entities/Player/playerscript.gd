@@ -20,7 +20,11 @@ func _ready() -> void:
 	pass
 	
 func _process(_delta: float) -> void:
-	debug.text = "Input: %s\nFPS: %d" % [InputMode.Mode.keys()[InputMode.mode], Engine.get_frames_per_second()]
+	debug.text = "Input: %s\nFPS: %d\nLooking at: %s" % [InputMode.Mode.keys()
+		[InputMode.mode], 
+		Engine.get_frames_per_second(),
+		_check_look_target()
+	]
 	if InputMode.Mode.keys()[InputMode.mode] == "TOUCH": 
 		touch.visible = true
 		touch.visible = false
@@ -61,14 +65,13 @@ func _physics_process(delta: float) -> void:
 
 
 
-func _check_look_target() -> void:
+func _check_look_target():
 	if not ray.is_colliding():
 		return
 	var collider := ray.get_collider()
 	var mesh := collider.get_parent() as MeshInstance3D
-	if mesh:
-		print(mesh.name)
-	else: print(ray.get_collider())
+	if mesh: print(mesh.name)
+	return mesh.name
 	
 func popup_message() -> void:
 	pass

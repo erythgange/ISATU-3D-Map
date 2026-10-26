@@ -41,13 +41,11 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Building1": {
-"generate/physics": true,
-"physics/shape_type": 2
+"PATH:CEA Building": {
+"generate/physics": true
 },
-"PATH:Building2": {
-"generate/physics": true,
-"physics/shape_type": 2
+"PATH:ICT Building": {
+"generate/physics": true
 }
 }
 }
