@@ -17,6 +17,12 @@ func _input(event: InputEvent) -> void:
 		_set_mode(Mode.TOUCH)
 	elif event is InputEventKey or event is InputEventMouseButton or event is InputEventMouseMotion:
 		_set_mode(Mode.KEYBOARD_MOUSE)
+		
+		
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("debugButton"):
+		# sets mode to touch if mobile, keyboard_mouse if pc. and force it
+		_set_mode(Mode.TOUCH if OS.has_feature("mobile") else Mode.KEYBOARD_MOUSE, true) 
 
 func _set_mode(new_mode: Mode, force := false) -> void:
 	if new_mode == mode and not force:

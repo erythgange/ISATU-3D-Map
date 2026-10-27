@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://ba681w1557xru"]
 
-[ext_resource type="Script" uid="uid://mmd0gaj72atj" path="res://Assets/Entities/BuildingData/BuildingData.gd" id="1_x3dyj"]
+[ext_resource type="Script" uid="uid://mmd0gaj72atj" path="res://Assets/Entities/BuildingData/BuildingData.gd" id="1_qk6dl"]
 
 [resource]
-script = ExtResource("1_x3dyj")
-id = "CS Building"
+script = ExtResource("1_qk6dl")
+id = "ICT Building"
 display_name = "Computer Science Building"
 description = "The ICT Building serves the College of Computing and Informatics (CCI) and related computing programs.
 "

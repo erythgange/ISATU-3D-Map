@@ -9,9 +9,8 @@ var is_flying := true
 @onready var head: Node3D = $Head
 @onready var ray: RayCast3D = $Head/Camera3D/RayCast3D
 
-#@onready var touch_menu: CanvasLayer = $"../TouchMenu"
-#@onready var virtual_joystick: VirtualJoystick = $"../TouchMenu/BoxContainer/VirtualJoystick"
-@onready var touch: Node2D = $"../CanvasLayer/Touch"
+@onready var virtual_joystick: VirtualJoystick = $"../UI/BoxContainer/VirtualJoystick"
+
 
 
 @onready var debug: Label = $Debug/VBoxContainer/Label
@@ -25,9 +24,9 @@ func _process(_delta: float) -> void:
 		Engine.get_frames_per_second(),
 		_check_look_target()
 	]
-	if InputMode.Mode.keys()[InputMode.mode] == "TOUCH": 
-		touch.visible = true
-		touch.visible = false
+	if InputMode.Mode.keys()[InputMode.mode] == "KEYBOARD_MOUSE": 
+		virtual_joystick.visible = true
+		virtual_joystick.visible = false
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -57,21 +56,16 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	else:
 		velocity.y = 0.0
-		
-	#check building
-	_check_look_target()
 
 	move_and_slide()
 
 
 
-func _check_look_target():
+func _check_look_target() -> String:
 	if not ray.is_colliding():
-		return
-	var collider := ray.get_collider()
-	var mesh := collider.get_parent() as MeshInstance3D
-	if mesh: print(mesh.name)
-	return mesh.name
+		return ""
+	var mesh := ray.get_collider().get_parent() as MeshInstance3D
+	return mesh.name if mesh else ""
 	
 func popup_message() -> void:
 	pass

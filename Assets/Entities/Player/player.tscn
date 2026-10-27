@@ -2,10 +2,114 @@
 
 [ext_resource type="Script" uid="uid://betuk2lfau3l2" path="res://Assets/Entities/Player/playerscript.gd" id="1_57uqe"]
 [ext_resource type="Script" uid="uid://drabky4fj5nt6" path="res://Assets/Entities/Player/label.gd" id="2_fj8al"]
+[ext_resource type="Theme" uid="uid://caqsd362mu62j" path="res://Assets/Non-Entities/UI/Poppins.tres" id="2_t8o21"]
+[ext_resource type="Script" uid="uid://bcnl74v3mjic5" path="res://Assets/Entities/Player/tooltip.gd" id="3_h78tv"]
+[ext_resource type="FontFile" uid="uid://bmuln25c1eui0" path="res://Assets/Non-Entities/UI/Poppins-Bold.ttf" id="4_2ok22"]
+[ext_resource type="Script" uid="uid://mmd0gaj72atj" path="res://Assets/Entities/BuildingData/BuildingData.gd" id="4_lqh56"]
+[ext_resource type="Resource" uid="uid://ba681w1557xru" path="res://Assets/Entities/BuildingData/Resources/ICT Building.tres" id="5_yju5h"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4kxuq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4kxuq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ln7ro"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
+bg_color = Color(0, 0, 0, 0.7490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id="Animation_2ok22"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lqh56"]
+resource_name = "entry"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yju5h"]
+resource_name = "exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, 50), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fr0kn"]
+_data = {
+&"RESET": SubResource("Animation_2ok22"),
+&"entry": SubResource("Animation_lqh56"),
+&"exit": SubResource("Animation_yju5h")
+}
 
 [node name="Player" type="CharacterBody3D" unique_id=1869260467]
 script = ExtResource("1_57uqe")
@@ -25,6 +129,59 @@ fov = 90.0
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1192550275]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.04)
 target_position = Vector3(0, 0, -50)
+
+[node name="Tooltip" type="PanelContainer" parent="Head/Camera3D" unique_id=1198491079]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+light_mask = 0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -323.0
+offset_right = 323.0
+offset_bottom = 182.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 50)
+mouse_filter = 2
+theme = ExtResource("2_t8o21")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ln7ro")
+script = ExtResource("3_h78tv")
+buildings = Array[ExtResource("4_lqh56")]([ExtResource("5_yju5h")])
+
+[node name="Heading" type="RichTextLabel" parent="Head/Camera3D/Tooltip" unique_id=211035958]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_t8o21")
+theme_override_fonts/bold_font = ExtResource("4_2ok22")
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[b]Building Name[/b]
+
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Content" type="RichTextLabel" parent="Head/Camera3D/Tooltip" unique_id=2026021481]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 50)
+mouse_filter = 2
+theme = ExtResource("2_t8o21")
+theme_override_fonts/bold_font = ExtResource("4_2ok22")
+bbcode_enabled = true
+text = "Building Description, Lorem ipsum dolor sit amet, consectetur"
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera3D/Tooltip" unique_id=413002560]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Camera3D/Tooltip" unique_id=1735541897]
+libraries/ = SubResource("AnimationLibrary_fr0kn")
+playback_default_blend_time = 0.5
 
 [node name="Debug" type="Control" parent="." unique_id=578829127]
 layout_mode = 3
